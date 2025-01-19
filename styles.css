@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #B22222; /* Verde suave */
+  background-color: #b22222; /* Verde suave */
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -16,13 +16,11 @@ body {
 }
 
 #inicio img {
-
 }
 
 #inicio {
   display: flex;
   font-family: "Roboto", serif;
-
 }
 
 #inicio h1 {
@@ -31,10 +29,8 @@ body {
   color: white; /* Vermelho Natalino */
 }
 
-
-
 #principal {
-  background-color: #FFFAF0; /* Branco suave (creme) */
+  background-color: #fffaf0; /* Branco suave (creme) */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -48,7 +44,7 @@ body {
 #principal input {
   height: 3rem;
   width: 30rem;
-  border: 2px solid #B22222; /* Bordas vermelhas */
+  border: 2px solid #b22222; /* Bordas vermelhas */
   border-radius: 20px;
   padding: 0 10px;
 }
@@ -70,14 +66,70 @@ button {
   height: 50px;
   border-radius: 45px;
   border: none;
-  background-color: #B22222; /* Vermelho Natalino */
+  background-color: #b22222; /* Vermelho Natalino */
   color: white;
 }
 
 button:hover {
-  background-color: #8B0000; /* Vermelho escuro para hover */
+  background-color: #8b0000; /* Vermelho escuro para hover */
 }
 
-#sort-button{
+#sort-button {
   width: 200px;
+}
+
+/* Media Queries para dispositivos menores */
+@media (max-width: 768px) {
+  #inicio h1 {
+    font-size: 2rem; /* Tamanho do título menor em telas pequenas */
+  }
+
+  #principal {
+    width: 95vw; /* Reduz a largura para telas pequenas */
+    padding: 20px;
+  }
+
+  #principal input {
+    width: 90%; /* Ajusta o tamanho do input */
+  }
+
+  section button {
+    width: 90%; /* Ajusta a largura do botão */
+  }
+
+  #inicio img {
+    height: 100px; /* Tamanho da imagem menor em telas pequenas */
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+
+}
+
+@media (max-width: 480px) {
+  #inicio h1 {
+    font-size: 1.5rem; /* Tamanho ainda menor do título */
+    margin-bottom: 50px;
+  }
+
+  #principal {
+    padding: 15px; /* Menos padding em telas muito pequenas */
+  }
+
+  #principal input {
+    width: 100%; /* Input ocupa toda a largura em telas muito pequenas */
+  }
+
+  section button {
+    width: 100%; /* Botão ocupa toda a largura em telas muito pequenas */
+  }
+
+  #inicio img {
+    height: 80px; /* Reduz ainda mais o tamanho da imagem */
+  }
 }
