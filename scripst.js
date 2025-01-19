@@ -32,7 +32,15 @@ button.addEventListener("click", () => {
 
 
 buttonSort.addEventListener("click", () => {
-  const h4 = document.createElement("h4")
+  const p = document.createElement("p")
   const amigoSecreto = gerarAmigoAleatorio(list);
 
+  p.textContent = `O amigo secreto sorteado é: ${amigoSecreto}`;
+  p.style.color = "red";
+  p.style.fontWeight = "bold"
+  const liToRemove = document.querySelector("ul");
+
+  liToRemove.parentNode.replaceChild(p, liToRemove);
+
 })
+
