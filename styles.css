@@ -5,55 +5,62 @@
 }
 
 body {
-  background-color: #62e896;
+  background-color: #B22222; /* Verde suave */
   display: flex;
   flex-direction: column;
   gap: 25px;
   justify-content: center;
   align-items: center;
   font-family: "Lato", serif;
-  font-weight: 400 bold;
+  font-weight: 400;
 }
 
-header {
+#inicio img {
+
+}
+
+#inicio {
   display: flex;
-  position: relative;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-}
-
-header h1 {
-
   font-family: "Roboto", serif;
-  font-weight: bold;
-  font-size: 70px;
-  position: absolute;
-  display: flex;
-  margin-right: 50%;
-  color: white;
+
 }
+
+#inicio h1 {
+  margin-top: 140px;
+  font-size: 3.5rem;
+  color: white; /* Vermelho Natalino */
+}
+
+
 
 #principal {
-  background-color: #61e0e8;
+  background-color: #FFFAF0; /* Branco suave (creme) */
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  color: white;
+  color: #008000; /* Verde Natalino */
   font-size: 20px;
   padding: 35px;
-  border-radius: 50px;
   width: 100vw;
 }
 
 #principal input {
   height: 3rem;
   width: 30rem;
-  border: #62e896;
+  border: 2px solid #B22222; /* Bordas vermelhas */
   border-radius: 20px;
+  padding: 0 10px;
 }
 
+ul {
+  list-style: none;
+  color: #008000; /* Verde Natalino */
+}
+
+section button:hover {
+  background-color: #008000; /* Verde Natalino para hover */
+}
 button {
   padding: 1px 1px;
   cursor: pointer;
@@ -63,91 +70,14 @@ button {
   height: 50px;
   border-radius: 45px;
   border: none;
-}
-
-
-section button:hover{
-  background-color:  #62e896;
-}
-
-ul {
-  list-style: none;
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  border: border-box;
-}
-
-body {
-  background-color: #62e896;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  justify-content: center;
-  align-items: center;
-  font-family: "Lato", serif;
-  font-weight: 400 bold;
-}
-
-header {
-  display: flex;
-  position: relative;
-  width: 100vw;
-  align-items: center;
-  justify-content: center;
-}
-
-header h1 {
-
-  font-family: "Roboto", serif;
-  font-weight: bold;
-  font-size: 70px;
-  position: absolute;
-  display: flex;
-  margin-right: 50%;
+  background-color: #B22222; /* Vermelho Natalino */
   color: white;
 }
 
-#principal {
-  background-color: #61e0e8;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  color: white;
-  font-size: 20px;
-  padding: 35px;
-  border-radius: 50px;
-  width: 100vw;
+button:hover {
+  background-color: #8B0000; /* Vermelho escuro para hover */
 }
 
-#principal input {
-  height: 3rem;
-  width: 30rem;
-  border: #62e896;
-  border-radius: 20px;
-}
-
-button {
-  padding: 1px 1px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: bold;
-  width: 150px;
-  height: 50px;
-  border-radius: 45px;
-  border: none;
-}
-
-
-section button:hover{
-  background-color:  #62e896;
-}
-
-ul {
-  list-style: none;
-  color: #000;
+#sort-button{
+  width: 200px;
 }
