@@ -1,0 +1,11 @@
+{
+  "name": "amigo-secreto",
+  "version": "1.0.0",
+  "description": "Projeto de Amigo Secreto utilizando HTML, CSS e JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo \"Iniciar o projeto\""
+  },
+  "author": "Gabriel de Oliveira Ferreira",
+  "license": "ISC"
+}
