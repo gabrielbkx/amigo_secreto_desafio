@@ -22,10 +22,8 @@ function adicionarAmigoNoHtml() {
   p.style.color = "red";
   p.style.fontWeight = "bold";
 
-  // Substitui a lista por uma mensagem
   friendsList.replaceWith(p);
 
-  // Atualiza a referência ao parágrafo para recriá-la no botão "Novo Jogo"
   friendsList.dataset.replacedBy = "p";
 }
 
@@ -44,10 +42,8 @@ function adicionarAmigoNaLista() {
 }
 
 function reiniciarJogo() {
-  // Limpa o array
   list.length = 0;
 
-  // Remove qualquer mensagem de resultado anterior
   const section = document.querySelector("#principal");
   const replacedElement = friendsList.dataset.replacedBy === "p"
     ? section.querySelector("p")
