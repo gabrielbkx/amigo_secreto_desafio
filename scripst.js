@@ -1,41 +1,32 @@
 // Criação da lista
-
 const list = [];
 
 // Captura de elementos
-
 const form = document.querySelector("form");
-
 const buttonSort = document.getElementById("sort-button");
-
-const button = document.getElementById("add");
-
-const input = document.querySelector("input");
-
-const friendsList = document.querySelector("ul");
+const input = document.getElementById("add-amigo");
+const friendsList = document.getElementById("friends-list");
+const newGameButton = document.getElementById("new_game");
 
 // Funções
-
 function gerarAmigoAleatorio(list) {
   const nomeAleatorio = list.sort(() => Math.random() - 0.5)[0];
-
   return nomeAleatorio;
 }
 
-function adicionarAmigoAleatorioNoHtml() {
+function adicionarAmigoNoHtml() {
   const p = document.createElement("p");
   const amigoSecreto = gerarAmigoAleatorio(list);
 
   p.textContent = `O amigo secreto sorteado é: ${amigoSecreto}`;
   p.style.color = "red";
   p.style.fontWeight = "bold";
-  const liToRemove = document.querySelector("ul");
 
-  liToRemove.parentNode.replaceChild(p, liToRemove);
+  // Substitui a lista por uma mensagem
+  friendsList.replaceWith(p);
 
-  input.addEventListener("click", () => {
-    p.parentNode.removeChild(p);
-  });
+  // Atualiza a referência ao parágrafo para recriá-la no botão "Novo Jogo"
+  friendsList.dataset.replacedBy = "p";
 }
 
 function adicionarAmigoNaLista() {
@@ -52,14 +43,37 @@ function adicionarAmigoNaLista() {
   }
 }
 
-// Código principal
+function reiniciarJogo() {
+  // Limpa o array
+  list.length = 0;
 
+  // Remove qualquer mensagem de resultado anterior
+  const section = document.querySelector("#principal");
+  const replacedElement = friendsList.dataset.replacedBy === "p"
+    ? section.querySelector("p")
+    : friendsList;
+
+  if (replacedElement) {
+    replacedElement.replaceWith(friendsList);
+    friendsList.innerHTML = ""; // Limpa a lista
+    delete friendsList.dataset.replacedBy; // Remove o atributo auxiliar
+  }
+}
+
+// Código principal
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   adicionarAmigoNaLista();
-  
 });
 
 buttonSort.addEventListener("click", () => {
-  adicionarAmigoAleatorioNoHtml();
+  if (list.length > 0) {
+    adicionarAmigoNoHtml();
+  } else {
+    alert("Adicione amigos antes de sortear!");
+  }
+});
+
+newGameButton.addEventListener("click", () => {
+  reiniciarJogo();
 });
